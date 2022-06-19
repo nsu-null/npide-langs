@@ -1,3 +1,4 @@
+import json
 import os
 import pathlib
 import re
@@ -26,14 +27,7 @@ def main():
 
     args = parser.parse_args()
     breakpoints_str: str = args.breakpoints
-    breakpoint_files = breakpoints_str.split('-')
-    breakpoint_map = {}
-    for i in breakpoint_files:
-        if '::' not in i:
-            continue
-        bp_file, bp_list_str = i.split('::')
-        bp_file: str
-        breakpoint_map[bp_file.rstrip()] = [int(j) for j in bp_list_str.split(',')]
+    breakpoint_map = json.loads(breakpoints_str)
 
     line_byte_map = {}
     for filename in args.filenames:

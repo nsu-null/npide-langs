@@ -21,21 +21,21 @@ def main():
     cfg = {
         "buildStrategy": {
             "strategyClass": "ru.nsu_null.npide.ide.projectstrategies.defaults.delegators.BuilderDelegatorStrategy",
-            'extraConfiguration': {
+            'extraParameters': {
                 'executable': local_venv_loc + "/python",
                 "script": 'cdm8_asm_brd_script.py'
             }
         },
         'runStrategy': {
             'strategyClass': "ru.nsu_null.npide.ide.projectstrategies.defaults.delegators.RunnerDelegatorStrategy",
-            'extraConfiguration': {
+            'extraParameters': {
                 'executable': local_venv_loc + "/python",
                 "script": 'cdm8_asm_brd_script.py'
             }
         },
         'debugStrategy': {
             'strategyClass': "ru.nsu_null.npide.ide.projectstrategies.defaults.delegators.DebuggerDelegatorStrategy",
-            'extraConfiguration': {
+            'extraParameters': {
                 'executable': local_venv_loc + "/python",
                 "script": 'cdm8_asm_brd_script.py',
                 "step": "S",
